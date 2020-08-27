@@ -8,7 +8,10 @@ function Avatars() {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [searchValue, setTextSearchValue] = useState("");
   const [avatarTypeValue, setDropdownValue] = useState("human");
-  const [editorOptions, setEditorOptions] = useState({ Background: "#ffffff" });
+  const [editorOptions, setEditorOptions] = useState({
+    Background: "#ffffff",
+    Border: "0",
+  });
   const avatarList = [
     { value: "human", text: "human" },
     { value: "male", text: "male" },
@@ -20,10 +23,9 @@ function Avatars() {
     { value: "initials", text: "initials" },
   ];
   useEffect(() => {
-    const background = editorOptions.Background
-      ? `?b=%23${editorOptions.Background.substr(1)}`
-      : "";
-
+    const { Background, Border } = editorOptions;
+    console.log(Border);
+    const background = `?${"r=" + Border}${"&b=%23" + Background.substr(1)}`;
     getAvatars(searchValue, avatarTypeValue, background).then((data) => {
       setAvatarUrl(data.url);
     });
@@ -50,7 +52,7 @@ function Avatars() {
   };
   const getEditorOptions = (id, value) => {
     console.log(id, value);
-    setEditorOptions({ [id]: value });
+    setEditorOptions({ ...editorOptions, [id]: value });
   };
   console.log(editorOptions);
   return (
@@ -74,6 +76,7 @@ function Avatars() {
       <Editor
         onChangeHandler={getEditorOptions}
         colorPickerValue={editorOptions.Background}
+        borderValue={editorOptions.Border}
       />
     </div>
   );

@@ -1,10 +1,11 @@
 import React from "react";
 
 function ColorPicker(props) {
+  console.log(props);
   const { labelName, onChangeHandler, colorPickerValue } = props;
   return (
-    <label htmlFor={labelName}>
-      {labelName}
+    <>
+      <label htmlFor={labelName}>{labelName}</label>
       <input
         type="color"
         id={labelName}
@@ -13,7 +14,7 @@ function ColorPicker(props) {
           onChangeHandler(event.currentTarget.id, event.currentTarget.value)
         }
       />
-    </label>
+    </>
   );
 }
 
