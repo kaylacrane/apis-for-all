@@ -3,10 +3,17 @@
   display: block;
 }
 .options {
+  padding: 10px;
   width: 350px;
   display: flex;
   flex-direction: column;
-  #Border {
+  #Background {
+    margin-top: 10px;
+  }
+  #Border,
+  #Margin,
+  label {
     width: 200px;
+    padding-top: 10px;
   }
 }

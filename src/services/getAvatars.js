@@ -1,6 +1,6 @@
-function getAvatars(searchText, searchType, background = "") {
+function getAvatars(searchText, searchType, options = "") {
   return fetch(
-    `https://avatars.dicebear.com/api/${searchType}/${searchText}.svg${background}`
+    `https://avatars.dicebear.com/api/${searchType}/${searchText}.svg${options}`
   ).then((response) => response);
 }
 

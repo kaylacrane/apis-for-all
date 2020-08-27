@@ -1,7 +1,7 @@
 import React from "react";
 
 function Slider(props) {
-  const { labelName, minValue, maxValue, borderValue, onChangeHandler } = props;
+  const { labelName, minValue, maxValue, sliderValue, onChangeHandler } = props;
   return (
     <>
       <label htmlFor={labelName}>{labelName}</label>
@@ -10,7 +10,7 @@ function Slider(props) {
         id={labelName}
         min={minValue}
         max={maxValue}
-        value={borderValue}
+        value={sliderValue}
         onChange={(event) =>
           onChangeHandler(event.currentTarget.id, event.currentTarget.value)
         }
