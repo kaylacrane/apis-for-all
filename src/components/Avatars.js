@@ -57,22 +57,30 @@ function Avatars() {
   };
   console.log(editorOptions);
   return (
-    <div>
-      <SearchByText
-        id={"searchByText"}
-        onChangeHandler={getSearchValue}
-        searchValue={searchValue}
-        placeholder="Your name or other text"
-      />
+    <div className="avatars">
+      <h1 className="avatars__title">Create your personalized avatar</h1>
+      <span className="avatars__description">
+        Choose a kind of avatar from the drop-down menu. Then type your name or
+        other text to automatically generate your avatar.
+      </span>
       <SearchByDropDown
         id="searchByType"
         dropdownOptions={buildDropdown()}
         onChangeHandler={getSearchValue}
         dropdownValue={avatarTypeValue}
       />
-      <div className="avatar-block">
-        <h2>Your personalized avatar:</h2>
-        <img src={avatarUrl} alt="avatar" className="avatar" />
+      <SearchByText
+        id={"searchByText"}
+        onChangeHandler={getSearchValue}
+        searchValue={searchValue}
+        placeholder="Your name or other text"
+      />
+      <div className="avatars__image-container">
+        <img
+          src={avatarUrl}
+          alt="avatar"
+          className="avatars__image-container--img"
+        />
       </div>
       <Editor
         onChangeHandler={getEditorOptions}

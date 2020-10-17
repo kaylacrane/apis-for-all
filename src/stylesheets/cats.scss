@@ -1,0 +1,37 @@
+.cat-fact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  &__title {
+  }
+  &__image {
+    padding: 0 10px 15px;
+  }
+  &__button {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #171944;
+    padding: 20px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    &:hover {
+      background: #944444;
+      letter-spacing: 1px;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+      box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+      transition: all 0.4s ease 0s;
+    }
+    &:active {
+      box-shadow: 0 0 10px 5px grey;
+    }
+  }
+  &__text {
+    text-align: center;
+  }
+}

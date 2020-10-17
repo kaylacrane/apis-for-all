@@ -17,7 +17,7 @@ const SearchByText = (props) => {
   // console.log(props);
 
   return (
-    <label>
+    <label htmlFor={id} className="text-search__label">
       <input
         type="text"
         id={id}
@@ -25,6 +25,7 @@ const SearchByText = (props) => {
         value={searchValue}
         onKeyDown={preventEnter}
         placeholder={placeholder}
+        className="text-search__input"
       />
     </label>
   );

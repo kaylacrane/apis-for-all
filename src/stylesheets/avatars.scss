@@ -1,19 +1,67 @@
-.avatar {
-  height: 100px;
-  display: block;
-}
-.options {
-  padding: 10px;
-  width: 350px;
+.avatars {
+  background-color: rgb(216, 162, 195);
+  padding: 10px 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(92, 26, 92);
   display: flex;
   flex-direction: column;
-  #Background {
-    margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto 20px;
+  text-align: center;
+  &__title {
+    text-transform: capitalize;
   }
-  #Border,
-  #Margin,
-  label {
-    width: 200px;
-    padding-top: 10px;
+  &__description {
+    padding: 0 0 10px;
+  }
+  .text-search {
+    &__label {
+      padding: 10px;
+    }
+    &__input {
+      padding: 5px;
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+      &::placeholder {
+        color: rgb(82, 25, 82);
+      }
+    }
+  }
+  &__image-container {
+    height: 150px;
+    width: 150px;
+    display: grid;
+    place-items: center;
+    &--img {
+      width: 100%;
+    }
+    &--title {
+    }
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #Background {
+      width: 100px;
+      height: 30px;
+    }
+    #Border,
+    #Margin,
+    label {
+      width: 200px;
+    }
+    label {
+      padding: 10px 0 5px;
+    }
+    #Margin,
+    #Border,
+    #Background {
+      color: green;
+      cursor: pointer;
+    }
   }
 }
